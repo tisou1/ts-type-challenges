@@ -30,7 +30,7 @@ type Div<N1 extends number, N2 extends number, Count extends unknown[] = []> =
 
 type ol =  Add<11,22>
 
-type sub1 = Sub<89, 70>
+type sub1 = Sub<89, 89>
 
 type mul1 = Mul<4, 5>
 

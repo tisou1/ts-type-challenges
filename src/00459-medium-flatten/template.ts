@@ -6,6 +6,14 @@ type Flatten<T extends unknown[]> =
       : [F,...Flatten<Rest>]
     : []
 
+//头部结构
+// type Flatten<T extends unknown[]> = 
+// T extends [...infer F, infer R]
+//   ? R extends unknown[]
+//     ? [...Flatten<F>, ...Flatten<R>]
+//     : [...Flatten<F>, R]
+//   : []
+
 
 //需要遍历原数组的每一项,对每一项进行是否是数组的判断.是的话进入递归,不是的话后面的再继续判断
 
