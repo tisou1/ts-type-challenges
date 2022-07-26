@@ -10,10 +10,8 @@ type Omit2<T, K extends keyof T> = {
 type MyReadonly2<T, K extends keyof T = keyof T> = 
 {
   readonly [P in K] : T[P]
-} &
-{
-  [P in keyof Omit<T, K>]: T[P]
-} 
+} &  Omit<T, K>
+
 
 type CCC = MyReadonly2<Todo1>
 interface Todo1 {
@@ -57,4 +55,4 @@ type  DD = keyof Omit<Todo1,never>
 
 // 1.遍历对象,找到需要设置readonly的值
 
-type AA = Readonly<{name:string}>
+// type AA = Readonly<{name:string}>

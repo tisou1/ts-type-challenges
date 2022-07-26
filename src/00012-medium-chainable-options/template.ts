@@ -13,12 +13,18 @@
 // Not<T, keyof Options>
 
 //不使用this进行的改造
-interface Chainable<Options = {}> {
-  option<T extends string, U>(key: Exclude<T, keyof Options>, value: U): Chainable<Options & {[S in T] : U}>;
-  get(): Options
+// interface Chainable<Options = {}> {
+//   option<T extends string, U>(key: Exclude<T, keyof Options>, value: U): Chainable<Options & {[S in T] : U}>;
+//   get(): Options
+// }
+
+interface Chainable<T = {}> {
+  option<K extends string, V>(
+    key: K extends keyof T ? (V extends T[K] ? never : K): K,
+    value: V
+  ): Chainable<Omit<T, K> & { [P in K]: V}>
+  get(): T
 }
-
-
 
 /**
  * - this
