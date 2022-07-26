@@ -9,6 +9,14 @@
   推断未知的类型
 
 - 代码切片
+```ts
+  type getLast<T extends unknow[]> = 
+    // T extends [...infer _, infer Last] : Last : never
+    T extends [...unknow[], infer Last] : Last :never
+ 
+  type getFirst<T extends unknow[]> = 
+    T extends [infer F, ...infer _] ? F : never
+```
 
 
 ### extends
@@ -53,4 +61,16 @@ type Om = {
 ```ts
   type A<T extends unknow[]> = T[number]  
   type Ol = A<[1,2,3]> // 1 | 2  | 3 
+```
+
+
+### 获取数组第一项和最后一项
+
+```ts
+  type getLast<T extends unknow[]> = 
+    // T extends [...infer _, infer Last] : Last : never
+    T extends [...unknow[], infer Last] : Last :never
+
+  type getFirst<T extends unknow[]> = 
+    T extends [infer F, ...infer _] ? F : never
 ```
