@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@type-challenges/utils": "^0.1.1"
+    "@type-challenges/utils": "^0.1.1",
+    "github-files-fetcher": "^1.6.0",
+    "type-challenge-helper": "^1.0.12"
   }
 }
