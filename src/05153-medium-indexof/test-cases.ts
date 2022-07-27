@@ -7,3 +7,4 @@ type cases = [
   Expect<Equal<IndexOf<[string, 1, number, 'a'], number>, 2>>,
   Expect<Equal<IndexOf<[string, 1, number, 'a', any], any>, 4>>,
 ]
+
