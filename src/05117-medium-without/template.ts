@@ -6,7 +6,7 @@ type Without<T, U, Result extends unknown[] = []> =
     ? F extends TupleToUnion1<U>
       ? Without<R, U, Result>
       : Without<R, U, [...Result, F]>
-    : T
+    : Result
 
 
     type ol3  = Without<[1, 2], 1>
