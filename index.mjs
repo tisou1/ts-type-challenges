@@ -1,5 +1,10 @@
 import { readdir, rename } from 'fs/promises';
 
+/**
+ * 
+ * 当时批量重命名src目录下的目录名
+ */
+
 function updateIndex(data) {
   let partten = /(\d+)(\-.+)/
   let temp = data.map(val => {
