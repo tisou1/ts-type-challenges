@@ -74,3 +74,35 @@ type Om = {
   type getFirst<T extends unknow[]> = 
     T extends [infer F, ...infer _] ? F : never
 ```
+
+
+### Pick  Omit (接口类型)
+```ts
+  interface Todo {
+    title: string
+    description: string
+    completed: boolean
+  }
+
+  type TODOPreview = Pick<Todo, "description"> //{description: string}
+``` 
+
+
+```ts
+  interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+ 
+type TodoPreview = Omit<Todo, "description">; //{title: string, complete: boolean}
+```
+
+### Exclude(排除)  Extract(挑选) (Union类型)
+```ts
+  type T0 = Exclude<"a" | "b" | "c", "a">; //'b' | 'c'
+```
+
+```ts
+  type T0 = Extract<"a" | "b" | "c", "a" | "f">; // 'a'
+```
