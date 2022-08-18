@@ -14,4 +14,6 @@ type CapitalizeWords<S extends string, AuxStr extends string = ""> = S extends `
 /**
  * Capitalize 将首字母大写  Uncapitalize 将首字母小写
  * 
+ * 首先判断当前的字符是否是大写的
+ *   判断当前的字符是不是字母(使用Char extends Uncapitalize<Char>字符本身如果能够分配给其小写的,则说明不是字母)
  */
